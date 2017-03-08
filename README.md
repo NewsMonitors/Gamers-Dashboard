@@ -1,17 +1,5 @@
 # News-Monitor Gamers Dashboard
 
-
-![Build Status](https://img.shields.io/circleci/project/angular-fullstack/generator-angular-fullstack/master.svg)
-[![npm version](https://img.shields.io/npm/v/generator-angular-fullstack.svg)](https://www.npmjs.com/package/generator-angular-fullstack)
-[![Dependency Status](https://img.shields.io/david/angular-fullstack/generator-angular-fullstack.svg)](https://david-dm.org/angular-fullstack/generator-angular-fullstack)
-[![Dev-Dependency Status](https://img.shields.io/david/dev/angular-fullstack/generator-angular-fullstack.svg)](https://david-dm.org/angular-fullstack/generator-angular-fullstack#info=devDependencies)
-[![Gitter chat](https://img.shields.io/gitter/room/DaftMonk/generator-angular-fullstack.svg)](https://gitter.im/DaftMonk/generator-angular-fullstack)
-[![OpenCollective](https://opencollective.com/angular-fullstack/backers/badge.svg)](#backers)
-[![OpenCollective](https://opencollective.com/angular-fullstack/sponsors/badge.svg)](#sponsors)
-> News-Monitor Gamers Dashboard based on MEAN/SEAN stack applications, using ES6, MongoDB/SQL, Express, AngularJS, and Node
-
-
-
 #### Generated project: 
 [![Dependency Status](https://img.shields.io/david/angular-fullstack/angular-fullstack-deps.svg)](https://david-dm.org/angular-fullstack/angular-fullstack-deps)
 [![Dev-Dependency Status](https://img.shields.io/david/dev/angular-fullstack/angular-fullstack-deps.svg)](https://david-dm.org/angular-fullstack/angular-fullstack-deps#info=devDependencies)
