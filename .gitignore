@@ -1,9 +1,10 @@
 node_modules
-bower_components
-/generators/*
-/test/*
-demo
+public
+.tmp
 .idea
-.DS_Store
-release.txt
-static
+client/bower_components
+client/index.html
+dist
+/server/config/local.env.js
+npm-debug.log
+coverage

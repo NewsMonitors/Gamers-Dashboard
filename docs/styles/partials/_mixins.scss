@@ -1,5 +1,0 @@
-@mixin break ($size: medium) {
-  @media (min-width: map-get($screens, $size)) {
-    @content;
-  }
-}
