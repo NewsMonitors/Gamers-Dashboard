@@ -1,0 +1,20 @@
+#navbar-dummy {
+    min-height: 59px;
+}
+@media (max-width: 991px){
+	#navbar-dummy {
+	    min-height: 46px;
+	   
+	}
+}
+.section-header {
+    border-top: 1px solid #449d44;
+}
+a {
+    color: #449D44;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #3C8B3C;
+    text-decoration: underline;
+}

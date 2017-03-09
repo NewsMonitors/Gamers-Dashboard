@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demoApp')
+angular.module('gamersDashApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

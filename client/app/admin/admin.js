@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demoApp')
+angular.module('gamersDashApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('admin', {

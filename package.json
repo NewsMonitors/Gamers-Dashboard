@@ -59,7 +59,6 @@
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-dom-munger": "^3.4.0",
-    "grunt-node-inspector": "^0.4.2",
     "grunt-env": "~0.4.1",
     "grunt-express-server": "~0.4.17",
     "grunt-google-cdn": "~0.4.0",
@@ -67,6 +66,7 @@
     "grunt-mocha-test": "~0.10.2",
     "grunt-newer": "~0.7.0",
     "grunt-ng-annotate": "^0.2.3",
+    "grunt-node-inspector": "^0.4.2",
     "grunt-nodemon": "~0.2.0",
     "grunt-open": "~0.2.3",
     "grunt-protractor-runner": "^1.1.0",
@@ -77,7 +77,6 @@
     "jit-grunt": "^0.5.0",
     "jshint-stylish": "~0.1.5",
     "open": "~0.0.4",
-    
     "should": "~3.3.1",
     "supertest": "~0.11.0",
     "time-grunt": "~0.3.1"

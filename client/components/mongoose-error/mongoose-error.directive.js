@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('demoApp')
+angular.module('gamersDashApp')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

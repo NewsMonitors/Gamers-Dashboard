@@ -1,4 +1,71 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
+<header id="top" class="navbar-fixed-top">
+    <div class="topbar">
+        <div class="container container-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-8 col-xs-12 header-search hidden-sm hidden-xs">
+                    <a href="#" title="Gamertag Nation" class="header-logo"></a>
+                    <form action="" class="header-search-form">
+                        <input type="hidden" name="s" value="">
+                        <input type="hidden" name="securitytoken" value="guest">
+                        <input type="hidden" name="do" value="results">
+                        <input type="hidden" name="group" value="custom">
+                        <div class="input-group right-inner-addon header-search">
+                            <div class="input-group-btn">
+                                <button type="button" name="group" value="custom" class="btn dropdown-toggle header-search-category" data-toggle="dropdown">
+                                    <span class="btn-value">Everything</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu header-search-select" role="menu">
+                                    <li role="presentation">
+                                        <a href="#" data-category="custom" role="menuitem" tabindex="-1">Everything</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#" data-category="game" role="menuitem" tabindex="-1">Games</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#" data-category="gamertag" role="menuitem" tabindex="-1">Gamertags</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#" data-category="achievements" role="menuitem" tabindex="-1">Achievements</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a href="#" data-category="leaderboard" role="menuitem" tabindex="-1">Leaderboards</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header-search-wrapper">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <input type="search" name="query" class="form-control header-search-query" placeholder="Search..." autocomplete="off" spellcheck="false">
+                            </div>
+                            <div class="filter-search-results header-search-results"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-5 col-md-4 col-xs-12 text-center-sm text-center-xs">
+                    <a href="#" class="menu-left-slide hidden-lg hidden-md" role="button">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <a href="#" title="Gamertag Nation" class="header-logo hidden-lg hidden-md"></a>
+                    <a href="#" id="header-search-btn" class="menu-right-slide hidden-lg hidden-md" role="button">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <ul class="mini-nav hidden-sm hidden-xs">
+                        <li role="presentation">
+                            <a href="#" title="Login" class="login text-white"><i class="fa fa-sign-in"></i> Login</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#" title="Sign Up" class="signup text-orange"><i class="fa fa-user-plus"></i> Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
@@ -27,3 +94,4 @@
     </div>
   </div>
 </div>
+ -->
