@@ -1,237 +1,409 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-
 <div class="section-header">
-            <div class="title-container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h1>Search</h1>
-                        </div>
-                        <div class="col-md-8 text-right">
-                            <form action="" class="form-horizontal">
-                                <input type="hidden" name="s" value="">
-                                <input type="hidden" name="securitytoken" value="guest">
-                                <input type="hidden" name="do" value="results">
-                                <div class="flextable">
-                                    <div class="flextable-item flextable-primary">
-                                        <div class="input-group input-group-lg">
-                                            <input type="text" class="form-control" id="tb_query" name="query" value="" placeholder="Search for games, gamertags, etc...">
-                                            <span class="input-group-btn">
+    <div class="title-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1>Search</h1>
+                </div>
+                <div class="col-md-8 text-right">
+                    <form action="" class="form-horizontal">
+                        <input type="hidden" name="s" value="">
+                        <input type="hidden" name="securitytoken" value="guest">
+                        <input type="hidden" name="do" value="results">
+                        <div class="flextable">
+                            <div class="flextable-item flextable-primary">
+                                <div class="input-group input-group-lg">
+                                    <input ng-model="searchText" type="text" class="form-control" id="tb_query" name="query" value="" placeholder="Search for games, gamertags, etc...">
+                                    <span class="input-group-btn">
                             <button type="submit" class="btn btn-default" tabindex="1">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
-                                        </div>
-                                    </div>
-                                    <div class="flextable-item">
-                                        <div class="btn-group btn-group-lg" role="group" aria-label="Filter">
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-filter"></i><span class="hidden-sm hidden-xs"> Filter</span> <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu dropdown-menu-right dropdown-menu-filters">
-                                                <li class="nav-header" role="presentation">Search for</li>
-                                                <li role="presentation">
-                                                    <a href="#" role="menuitem" tabindex="-1">
-                                                        <i class="fa fa-check-square fa-fw icon-status"></i> Game
-                                                    </a>
-                                                    <input type="hidden" name="options[game]" value="1">
-                                                </li>
-                                                <li role="presentation">
-                                                    <a href="#" role="menuitem" tabindex="-1">
-                                                        <i class="fa fa-check-square fa-fw icon-status"></i> Gamertag
-                                                    </a>
-                                                    <input type="hidden" name="options[gamertag]" value="1">
-                                                </li>
-                                                <li role="presentation">
-                                                    <a href="#" role="menuitem" tabindex="-1">
-                                                        <i class="fa fa-check-square fa-fw icon-status"></i> Achievements
-                                                    </a>
-                                                    <input type="hidden" name="options[achievements]" value="1">
-                                                </li>
-                                                <li role="presentation">
-                                                    <a href="#" role="menuitem" tabindex="-1">
-                                                        <i class="fa fa-check-square fa-fw icon-status"></i> Leaderboard
-                                                    </a>
-                                                    <input type="hidden" name="options[leaderboard]" value="1">
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="flextable-item">
+                                <div class="btn-group btn-group-lg" role="group" aria-label="Filter">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-filter"></i><span class="hidden-sm hidden-xs"> Filter</span> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right dropdown-menu-filters">
+                                        <li class="nav-header" role="presentation">Search for</li>
+                                        <li role="presentation">
+                                            <a href="#" role="menuitem" tabindex="-1">
+                                                <i class="fa fa-check-square fa-fw icon-status"></i> Game
+                                            </a>
+                                            <input type="hidden" name="options[game]" value="1">
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#" role="menuitem" tabindex="-1">
+                                                <i class="fa fa-check-square fa-fw icon-status"></i> Gamertag
+                                            </a>
+                                            <input type="hidden" name="options[gamertag]" value="1">
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#" role="menuitem" tabindex="-1">
+                                                <i class="fa fa-check-square fa-fw icon-status"></i> Achievements
+                                            </a>
+                                            <input type="hidden" name="options[achievements]" value="1">
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#" role="menuitem" tabindex="-1">
+                                                <i class="fa fa-check-square fa-fw icon-status"></i> Leaderboard
+                                            </a>
+                                            <input type="hidden" name="options[leaderboard]" value="1">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-                <!-- /container -->
             </div>
-            <!-- /title-container -->
         </div>
-        <!-- /section-header -->
-        <div class="outer-container">
-            <section class="section-wrapper section-wrapper-lightgray thumbnails">
-                <div class="container solo">
-                    <div class="section-title row">
-                        <div class="col-xs-12">
-                            <h2>Discover</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="thumbnail thumbnail-games thumbnail-search">
-                                <a href="#" class="gamethumb background">
-                                    <div class="text-center">
-                                        <i class="fa fa-gamepad fa-4x"></i>
-                                    </div>
-                                </a>
-                                <div class="caption">
-                                    <div class="title-wrapper">
-                                        <h4><a href="#">Games</a></h4>
-                                    </div>
-                                    <p class="text-sm text-muted">Explore the latest games and activity from the community</p>
-                                </div>
+        <!-- /container -->
+    </div>
+    <!-- /title-container -->
+</div>
+<!-- /section-header -->
+<div class="outer-container">
+    <section ng-if="!isSearched" class="section-wrapper section-wrapper-lightgray thumbnails">
+        <div class="container solo">
+            <div class="section-title row">
+                <div class="col-xs-12">
+                    <h2>Discover</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail thumbnail-games thumbnail-search">
+                        <a href="#" class="gamethumb background">
+                            <div class="text-center">
+                                <i class="fa fa-gamepad fa-4x"></i>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="thumbnail thumbnail-games thumbnail-search">
-                                <a href="#" class="gamethumb background">
-                                    <div class="text-center">
-                                        <i class="fa fa-trophy fa-4x"></i>
-                                    </div>
-                                </a>
-                                <div class="caption">
-                                    <div class="title-wrapper">
-                                        <h4><a href="#">Achievements</a></h4>
-                                    </div>
-                                    <p class="text-sm text-muted">Explore and track the latest achievements for games you're interested in</p>
-                                </div>
+                        </a>
+                        <div class="caption">
+                            <div class="title-wrapper">
+                                <h4><a href="#">Games</a></h4>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="thumbnail thumbnail-games thumbnail-search">
-                                <a href="#" class="gamethumb background">
-                                    <div class="text-center">
-                                        <i class="fa fa-line-chart fa-4x"></i>
-                                    </div>
-                                </a>
-                                <div class="caption">
-                                    <div class="title-wrapper">
-                                        <h4><a href="#">Leaderboards</a></h4>
-                                    </div>
-                                    <p class="text-sm text-muted">See where you stack up and explore custom leaderboards</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="thumbnail thumbnail-games thumbnail-search">
-                                <a rel="nofollow" href="#" class="gamethumb background">
-                                    <div class="text-center">
-                                        <i class="gtnicon gtnicon-social-xbox gtnicon-4x"></i>
-                                    </div>
-                                </a>
-                                <div class="caption">
-                                    <div class="title-wrapper">
-                                        <h4><a rel="nofollow" href="#">Gamertags</a></h4>
-                                    </div>
-                                    <p class="text-sm text-muted">Explore the top gamertags and search for other gamers registered on the site</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="thumbnail thumbnail-games thumbnail-search">
-                                <a href="#" class="gamethumb background">
-                                    <div class="text-center">
-                                        <i class="gtnicon gtnicon-sheriff-badge gtnicon-4x"></i>
-                                    </div>
-                                </a>
-                                <div class="caption">
-                                    <div class="title-wrapper">
-                                        <h4><a href="#">New Game Releases</a></h4>
-                                    </div>
-                                    <p class="text-sm text-muted">Check out the latest released games</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="thumbnail thumbnail-games thumbnail-search">
-                                <a href="#" class="gamethumb background">
-                                    <div class="text-center">
-                                        <i class="fa fa-comments fa-4x"></i>
-                                    </div>
-                                </a>
-                                <div class="caption">
-                                    <div class="title-wrapper">
-                                        <h4><a href="#">Top Rated Games</a></h4>
-                                    </div>
-                                    <p class="text-sm text-muted">Explore the Top Rated games as voted on by our community</p>
-                                </div>
-                            </div>
+                            <p class="text-sm text-muted">Explore the latest games and activity from the community</p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="section-wrapper section-wrapper-white thumbnails">
-                <div class="container solo">
-                    <div class="section-title">
-                        <h2>Browse Games by Platform</h2>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail thumbnail-games thumbnail-search">
+                        <a href="#" class="gamethumb background">
+                            <div class="text-center">
+                                <i class="fa fa-trophy fa-4x"></i>
+                            </div>
+                        </a>
+                        <div class="caption">
+                            <div class="title-wrapper">
+                                <h4><a href="#">Achievements</a></h4>
+                            </div>
+                            <p class="text-sm text-muted">Explore and track the latest achievements for games you're interested in</p>
+                        </div>
                     </div>
-                    <ul class="list-unstyled row supported-platforms">
-                        <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg">
-                            <a href="#" class="text-platform-ONE" data-toggle="tooltip" data-container="body" title="" data-original-title="Xbox One">
-                                <i class="gtnicon gtnicon-social-xbox"></i>
-                                <span>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail thumbnail-games thumbnail-search">
+                        <a href="#" class="gamethumb background">
+                            <div class="text-center">
+                                <i class="fa fa-line-chart fa-4x"></i>
+                            </div>
+                        </a>
+                        <div class="caption">
+                            <div class="title-wrapper">
+                                <h4><a href="#">Leaderboards</a></h4>
+                            </div>
+                            <p class="text-sm text-muted">See where you stack up and explore custom leaderboards</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail thumbnail-games thumbnail-search">
+                        <a rel="nofollow" href="#" class="gamethumb background">
+                            <div class="text-center">
+                                <i class="gtnicon gtnicon-social-xbox gtnicon-4x"></i>
+                            </div>
+                        </a>
+                        <div class="caption">
+                            <div class="title-wrapper">
+                                <h4><a rel="nofollow" href="#">Gamertags</a></h4>
+                            </div>
+                            <p class="text-sm text-muted">Explore the top gamertags and search for other gamers registered on the site</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail thumbnail-games thumbnail-search">
+                        <a href="#" class="gamethumb background">
+                            <div class="text-center">
+                                <i class="gtnicon gtnicon-sheriff-badge gtnicon-4x"></i>
+                            </div>
+                        </a>
+                        <div class="caption">
+                            <div class="title-wrapper">
+                                <h4><a href="#">New Game Releases</a></h4>
+                            </div>
+                            <p class="text-sm text-muted">Check out the latest released games</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail thumbnail-games thumbnail-search">
+                        <a href="#" class="gamethumb background">
+                            <div class="text-center">
+                                <i class="fa fa-comments fa-4x"></i>
+                            </div>
+                        </a>
+                        <div class="caption">
+                            <div class="title-wrapper">
+                                <h4><a href="#">Top Rated Games</a></h4>
+                            </div>
+                            <p class="text-sm text-muted">Explore the Top Rated games as voted on by our community</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section ng-if="!isSearched" class="section-wrapper section-wrapper-white thumbnails">
+        <div class="container solo">
+            <div class="section-title">
+                <h2>Browse Games by Platform</h2>
+            </div>
+            <ul class="list-unstyled row supported-platforms">
+                <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg">
+                    <a href="#" class="text-platform-ONE" data-toggle="tooltip" data-container="body" title="" data-original-title="Xbox One">
+                        <i class="gtnicon gtnicon-social-xbox"></i>
+                        <span>
                             Xbox One
                         </span>
-                            </a>
-                        </li>
-                        <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg">
-                            <a href="#" class="text-platform-360" data-toggle="tooltip" data-container="body" title="" data-original-title="Xbox 360">
-                                <i class="gtnicon gtnicon-social-xbox"></i>
-                                <span>
+                    </a>
+                </li>
+                <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg">
+                    <a href="#" class="text-platform-360" data-toggle="tooltip" data-container="body" title="" data-original-title="Xbox 360">
+                        <i class="gtnicon gtnicon-social-xbox"></i>
+                        <span>
                             Xbox 360
                         </span>
-                            </a>
-                        </li>
-                        <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg">
-                            <a href="#" class="text-platform-WIN" data-toggle="tooltip" data-container="body" title="" data-original-title="Windows 10">
-                                <i class="gtnicon gtnicon-windows"></i>
-                                <span>
+                    </a>
+                </li>
+                <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg">
+                    <a href="#" class="text-platform-WIN" data-toggle="tooltip" data-container="body" title="" data-original-title="Windows 10">
+                        <i class="gtnicon gtnicon-windows"></i>
+                        <span>
                             Windows 10
                         </span>
-                            </a>
-                        </li>
-                        <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg mar-no-md">
-                            <a href="#" class="text-platform-WIN" data-toggle="tooltip" data-container="body" title="" data-original-title="Play Station">
-                                <i class="gtnicon gtnicon-windows"></i>
-                                <span>
+                    </a>
+                </li>
+                <li class="col-lg-2 col-md-4 col-xs-6 mar-no-lg mar-no-md">
+                    <a href="#" class="text-platform-WIN" data-toggle="tooltip" data-container="body" title="" data-original-title="Play Station">
+                        <i class="gtnicon gtnicon-windows"></i>
+                        <span>
                             Play Station
                         </span>
-                            </a>
-                        </li>
-                    </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div ng-if="isSearched" class="container right">
+        <div class="row">
+            <div class="content">
+                <div class="row search-options">
+                    <div class="col-md-12">
+                        <p class="lead">Found <strong>19</strong> results for "<strong>hunter</strong>"</p>
+                    </div>
                 </div>
-            </section>
-            <div>
-            </div>
-            <div class="footer-masthead">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-7 current-time text-center-xs">
-                            <i class="glyphicon glyphicon-time"></i> All times are GMT -5. The time now is <span class="time">05:14 AM</span>.
-                        </div>
-                        <div class="col-sm-5 text-right text-center-xs">
-                            <div class="btn-group btn-group-sm hidden-lg hidden-md " role="group" aria-label="View Desktop Site">
-                                <button type="button" class="btn btn-default btn-outline toggle-desktop" data-desktop="1">
-                                    <i class="fa fa-desktop fa-fw"></i> Desktop Site
-                                </button>
+                <hr>
+                <div class="section-title row">
+                    <div class="col-sm-12">
+                        <h3>Games <span class="text-muted">(19 results)</span></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-1203/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/1203.png');">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-1203/" title="Green Lantern: Rise of the Manhunters">Green Lantern: Rise of the Manhunters</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-360">
+                                        Xbox 360
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/1/">Action-Adventure</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 06-07-2011
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 329 Members
+                                </p>
                             </div>
-                            <div class="btn-group btn-group-sm" role="group" aria-label="Top">
-                                <button type="button" class="btn btn-default btn-outline" id="jump-to-top">
-                                    <i class="glyphicon glyphicon-chevron-up"></i> Top
-                                </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-165/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/165.png');">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-165/" title="Cabela's Big Game Hunter">Cabela's Big Game Hunter</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-360">
+                                        Xbox 360
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 11-06-2007
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 257 Members
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-1422/" class="gamethumb background">
+                                <img src="https://img.gamertagnation.com/gametiles/deer-hunter-3d-wp-0.jpg" width="64" height="64" alt="">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-1422/" title="Deer Hunter 3D">Deer Hunter 3D</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-WP">
+                                        Windows Phone
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 02-11-2011
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 119 Members
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-777/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/777.png');">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-777/" title="Cabela's Big Game Hunter 2010">Cabela's Big Game Hunter 2010</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-360">
+                                        Xbox 360
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 09-29-2009
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 111 Members
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-4379/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/4379.png');">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-4379/" title="Dungeon Hunter 5">Dungeon Hunter 5</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-WIN8">
+                                        Windows 8
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/18/">Hack &amp; Slash</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 06-24-2015
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 106 Members
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-1665/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/1665.png');">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-1665/" title="Cabela's Big Game Hunter 2012">Cabela's Big Game Hunter 2012</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-360">
+                                        Xbox 360
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 09-27-2011
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 99 Members
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail thumbnail-games">
+                            <a href="https://www.gamertagnation.com/games/game-2112/" class="gamethumb background">
+                                <img src="https://img.gamertagnation.com/gametiles/depth-hunter-2-deep-water-adventures-360-1.jpg" width="64" height="64" alt="">
+                            </a>
+                            <div class="caption">
+                                <div class="title-wrapper">
+                                    <h4>
+                    <a href="https://www.gamertagnation.com/games/game-2112/" title="Depth Hunter 2: Deep Water Adventures">Depth Hunter 2: Deep Water Adventures</a>
+                </h4>
+                                    <p class="text-sm text-platform text-platform-360">
+                                        Xbox 360
+                                    </p>
+                                </div>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/1/">Action-Adventure</a>
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> N/A
+                                </p>
+                                <p class="text-sm text-muted">
+                                    <i class="fa fa-users fa-fw"></i> 0 Members
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 <div ng-include="'components/footer/footer.html'"></div>

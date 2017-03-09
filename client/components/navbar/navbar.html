@@ -1,10 +1,10 @@
-<header id="top" class="navbar-fixed-top">
+<header id="top" class="navbar-fixed-top" ng-controller="NavbarCtrl">
     <div class="topbar">
         <div class="container container-header">
             <div class="row">
                 <div class="col-lg-7 col-md-8 col-xs-12 header-search hidden-sm hidden-xs">
                     <a href="#" title="Gamertag Nation" class="header-logo"></a>
-                    <form action="" class="header-search-form">
+                    <form class="header-search-form" ng-submit="topBarSearch(searchText)">
                         <input type="hidden" name="s" value="">
                         <input type="hidden" name="securitytoken" value="guest">
                         <input type="hidden" name="do" value="results">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="header-search-wrapper">
                                 <i class="glyphicon glyphicon-search"></i>
-                                <input type="search" name="query" class="form-control header-search-query" placeholder="Search..." autocomplete="off" spellcheck="false">
+                                <input ng-model="searchText" type="search" name="query" class="form-control header-search-query" placeholder="Search..." autocomplete="off" spellcheck="false">
                             </div>
                             <div class="filter-search-results header-search-results"></div>
                         </div>
