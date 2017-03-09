@@ -1,45 +1,37 @@
 'use strict';
 
-import angular from 'angular';
+angular.module('demoApp')
+  .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
+    $scope.user = {};
+    $scope.errors = {};
 
-export default class SignupController {
-  user = {
-    name: '',
-    email: '',
-    password: ''
-  };
-  errors = {};
-  submitted = false;
+    $scope.register = function(form) {
+      $scope.submitted = true;
 
-
-  /*@ngInject*/
-  constructor(Auth, $state) {
-    this.Auth = Auth;
-    this.$state = $state;
-  }
-
-  register(form) {
-    this.submitted = true;
-
-    if(form.$valid) {
-      return this.Auth.createUser({
-        name: this.user.name,
-        email: this.user.email,
-        password: this.user.password
-      })
-        .then(() => {
-          // Account created, redirect to home
-          this.$state.go('main');
+      if(form.$valid) {
+        Auth.createUser({
+          name: $scope.user.name,
+          email: $scope.user.email,
+          password: $scope.user.password
         })
-        .catch(err => {
+        .then( function() {
+          // Account created, redirect to home
+          $location.path('/');
+        })
+        .catch( function(err) {
           err = err.data;
-          this.errors = {};
+          $scope.errors = {};
+
           // Update validity of form fields that match the mongoose errors
-          angular.forEach(err.errors, (error, field) => {
+          angular.forEach(err.errors, function(error, field) {
             form[field].$setValidity('mongoose', false);
-            this.errors[field] = error.message;
+            $scope.errors[field] = error.message;
           });
         });
-    }
-  }
-}
+      }
+    };
+
+    $scope.loginOauth = function(provider) {
+      $window.location.href = '/auth/' + provider;
+    };
+  });

@@ -1,36 +1,21 @@
 'use strict';
 
-export default class SettingsController {
-  user = {
-    oldPassword: '',
-    newPassword: '',
-    confirmPassword: ''
-  };
-  errors = {
-    other: undefined
-  };
-  message = '';
-  submitted = false;
+angular.module('demoApp')
+  .controller('SettingsCtrl', function ($scope, User, Auth) {
+    $scope.errors = {};
 
-
-  /*@ngInject*/
-  constructor(Auth) {
-    this.Auth = Auth;
-  }
-
-  changePassword(form) {
-    this.submitted = true;
-
-    if(form.$valid) {
-      this.Auth.changePassword(this.user.oldPassword, this.user.newPassword)
-        .then(() => {
-          this.message = 'Password successfully changed.';
+    $scope.changePassword = function(form) {
+      $scope.submitted = true;
+      if(form.$valid) {
+        Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
+        .then( function() {
+          $scope.message = 'Password successfully changed.';
         })
-        .catch(() => {
+        .catch( function() {
           form.password.$setValidity('mongoose', false);
-          this.errors.other = 'Incorrect password';
-          this.message = '';
+          $scope.errors.other = 'Incorrect password';
+          $scope.message = '';
         });
-    }
-  }
-}
+      }
+		};
+  });

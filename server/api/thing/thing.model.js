@@ -1,13 +1,12 @@
 'use strict';
 
-import mongoose from 'mongoose';
-import {registerEvents} from './thing.events';
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
-var ThingSchema = new mongoose.Schema({
+var ThingSchema = new Schema({
   name: String,
   info: String,
   active: Boolean
 });
 
-registerEvents(ThingSchema);
-export default mongoose.model('Thing', ThingSchema);
+module.exports = mongoose.model('Thing', ThingSchema);
