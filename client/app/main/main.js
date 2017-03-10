@@ -6,6 +6,7 @@ angular.module('gamersDashApp')
       .state('main', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        params: {searchInfo: null}
       });
   });

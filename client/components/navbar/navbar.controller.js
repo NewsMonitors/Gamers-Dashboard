@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gamersDashApp')
-    .controller('NavbarCtrl', function($scope, $rootScope, $location, Auth) {
+    .controller('NavbarCtrl', function($scope, $rootScope, $location, Auth, $state) {
         $scope.menu = [{
             'title': 'Home',
             'link': '/'
@@ -23,6 +23,7 @@ angular.module('gamersDashApp')
 
         //submit search form
         $scope.topBarSearch = function(searchText) {
+
             var searchType = $(".header-search-form button").find('.btn-value').text();
             var selectedItemIndex; 
             switch (searchType) {
@@ -51,10 +52,11 @@ angular.module('gamersDashApp')
                 $(this).removeClass("off");
                 $(this).find('input').val(1);
             });
-            $rootScope.$broadcast('$topBarSearchResult', dataToMainCtrl);
+            $state.go('main', { searchInfo: dataToMainCtrl});
             //empty the search input value
             $scope.searchText = '';
             $('input.header-search-query').blur();
+
         }
         //jquery for drop down search
         $(".header-search-select>li>a").on("click", function(e) {

@@ -2984,6 +2984,10 @@ footer .ui-game-icon-flag {
 .media-body {
     overflow: visible
 }
+.media-left, .media-right, .media-body {
+    display: table-cell;
+    vertical-align: top;
+}
 .section-info .media,
 .section-info .media-body,
 .achievement-list .media,
