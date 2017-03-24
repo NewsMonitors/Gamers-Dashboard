@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gamersDashApp')
-  .controller('MainCtrl', function($scope, $http, $state, $stateParams) {
+  .controller('MainCtrl', function($scope, $http, $state, $stateParams, Search) {
     //scope initiailize
     $scope.awesomeThings = [];
     $scope.isSearched = false;
@@ -10,6 +10,7 @@ angular.module('gamersDashApp')
     if ($stateParams.searchInfo) {
       var data = $stateParams.searchInfo;
       $scope.searchText = data.searchText;
+
       var selectedItemIndex = data.selectedItemIndex;
       var count = 0;
       $(".dropdown-menu-filters>li").each(function() {
@@ -23,8 +24,24 @@ angular.module('gamersDashApp')
         count++;
       });
       $scope.isSearched = true;
+
+      alert(data.searchText);
     }
 
+    $scope.search = function(keyword) {
+      Search.getGames(keyword, function(err, result) {
+        console.log('fromServer=> ', result);
+        if(!err) {
+          if(result.data.success) {
+
+          } else {
+
+          }
+        } else {
+          alert('There is a problem in request to the server ', err);
+        }
+      });
+    }
     $scope.addThing = function() {
       if ($scope.newThing === '') {
         return;
@@ -36,12 +53,6 @@ angular.module('gamersDashApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
-
-    $scope.$on('$destroy', function() {
-
-    });
-
-
 
 
     // jquery
