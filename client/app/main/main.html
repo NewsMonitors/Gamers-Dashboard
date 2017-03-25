@@ -214,193 +214,42 @@
       <div class="content">
         <div class="row search-options">
           <div class="col-md-12">
-            <p class="lead">Found <strong>19</strong> results for "<strong>hunter</strong>"</p>
+            <p class="lead">Found <strong>{{searchedData.length}}</strong> results for "<strong>{{searchText}}</strong>"</p>
           </div>
         </div>
         <hr>
         <div class="section-title row">
           <div class="col-sm-12">
-            <h3>Games <span class="text-muted">(19 results)</span></h3>
+            <h3>All <span class="text-muted">({{searchedData.length}} results)</span></h3>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-sm-6 col-xs-12">
+          <div class="col-lg-4 col-sm-6 col-xs-12" ng-repeat="item in searchedData">
             <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-1203/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/1203.png');">
+              <a ui-sref="games.overview({gameId: item.ID})"  target="_blank" class="gamethumb background custom" style="background-image:url('{{item.Images[0].Url}}');">
               </a>
               <div class="caption">
                 <div class="title-wrapper">
                   <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Green Lantern: Rise of the Manhunters">Green Lantern: Rise of the Manhunters</a>
-                </h4>
+                    <a ui-sref="games.overview({gameId: item.ID})" target="_blank" title="{{item.Name}}">{{item.Name}}</a>
+                  </h4>
                   <p class="text-sm text-platform text-platform-360">
-                    Xbox 360
+                    Rating: {{item.AllTimeAverageRating | limitTo : 4}}
                   </p>
                 </div>
                 <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/1/">Action-Adventure</a>
+                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/1/">{{item.MediaItemType}}</a>
                 </p>
                 <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 06-07-2011
+                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> {{item.ReleaseDate | limitTo : 10}}
                 </p>
                 <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 329 Members
+                  <i class="fa fa-users fa-fw"></i> {{item.AllTimePlayCount}} Members
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-165/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/165.png');">
-              </a>
-              <div class="caption">
-                <div class="title-wrapper">
-                  <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Cabela's Big Game Hunter">Cabela's Big Game Hunter</a>
-                </h4>
-                  <p class="text-sm text-platform text-platform-360">
-                    Xbox 360
-                  </p>
-                </div>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 11-06-2007
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 257 Members
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-1422/" class="gamethumb background">
-                <img src="https://img.gamertagnation.com/gametiles/deer-hunter-3d-wp-0.jpg" width="64" height="64" alt="">
-              </a>
-              <div class="caption">
-                <div class="title-wrapper">
-                  <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Deer Hunter 3D">Deer Hunter 3D</a>
-                </h4>
-                  <p class="text-sm text-platform text-platform-WP">
-                    Windows Phone
-                  </p>
-                </div>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 02-11-2011
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 119 Members
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-777/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/777.png');">
-              </a>
-              <div class="caption">
-                <div class="title-wrapper">
-                  <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Cabela's Big Game Hunter 2010">Cabela's Big Game Hunter 2010</a>
-                </h4>
-                  <p class="text-sm text-platform text-platform-360">
-                    Xbox 360
-                  </p>
-                </div>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 09-29-2009
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 111 Members
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-4379/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/4379.png');">
-              </a>
-              <div class="caption">
-                <div class="title-wrapper">
-                  <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Dungeon Hunter 5">Dungeon Hunter 5</a>
-                </h4>
-                  <p class="text-sm text-platform text-platform-WIN8">
-                    Windows 8
-                  </p>
-                </div>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/18/">Hack &amp; Slash</a>
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 06-24-2015
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 106 Members
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-1665/" class="gamethumb background custom" style="background-image:url('https://img.gamertagnation.com/gameimages/backgrounds/smaller/1665.png');">
-              </a>
-              <div class="caption">
-                <div class="title-wrapper">
-                  <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Cabela's Big Game Hunter 2012">Cabela's Big Game Hunter 2012</a>
-                </h4>
-                  <p class="text-sm text-platform text-platform-360">
-                    Xbox 360
-                  </p>
-                </div>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/85/">Hunting &amp; Fishing</a>
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> 09-27-2011
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 99 Members
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xs-12">
-            <div class="thumbnail thumbnail-games">
-              <a href="https://www.gamertagnation.com/games/game-2112/" class="gamethumb background">
-                <img src="https://img.gamertagnation.com/gametiles/depth-hunter-2-deep-water-adventures-360-1.jpg" width="64" height="64" alt="">
-              </a>
-              <div class="caption">
-                <div class="title-wrapper">
-                  <h4>
-                    <a ui-sref="games.overview({gameId: 342342})" title="Depth Hunter 2: Deep Water Adventures">Depth Hunter 2: Deep Water Adventures</a>
-                </h4>
-                  <p class="text-sm text-platform text-platform-360">
-                    Xbox 360
-                  </p>
-                </div>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-folder fa-fw"></i> <a href="https://www.gamertagnation.com/games/genre/1/">Action-Adventure</a>
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="ui-game-icon ui-game-icon-flag ui-game-icon-flag-United_States inlineimg" title="United States"></i> N/A
-                </p>
-                <p class="text-sm text-muted">
-                  <i class="fa fa-users fa-fw"></i> 0 Members
-                </p>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

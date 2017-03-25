@@ -5,7 +5,6 @@ angular.module('gamersDashApp')
     //scope initiailize
     $scope.awesomeThings = [];
     $scope.isSearched = false;
-
     //initialize the searchSection data from the nabar if possible
     if ($stateParams.searchInfo) {
       var data = $stateParams.searchInfo;
@@ -28,20 +27,27 @@ angular.module('gamersDashApp')
       alert(data.searchText);
     }
 
+    // search 
     $scope.search = function(keyword) {
+      $('#loading').show();
       Search.getGames(keyword, function(err, result) {
-        console.log('fromServer=> ', result);
+        // console.log('fromServer=> ', result);
         if(!err) {
-          if(result.data.success) {
-
+          if(result.success) {
+            $scope.isSearched = true;
+            $scope.searchedData = result.data.Items;
+            console.log('searchResult=> ', $scope.searchedData);
+            
           } else {
 
           }
         } else {
           alert('There is a problem in request to the server ', err);
         }
+        $('#loading').hide();
       });
     }
+
     $scope.addThing = function() {
       if ($scope.newThing === '') {
         return;
